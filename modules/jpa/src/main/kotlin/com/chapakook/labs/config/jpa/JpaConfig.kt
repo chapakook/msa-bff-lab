@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @Configuration
 @EnableTransactionManagement
-@EntityScan(basePackages = ["com.loopers"])
+@EntityScan(basePackages = ["com.chapakook.labs"])
 @EnableJpaRepositories(basePackages = ["com.chapakook.labs.infrastructure"])
 class JpaConfig
