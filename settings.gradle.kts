@@ -1,6 +1,7 @@
 rootProject.name = "msa-bff-lab"
 
 include(
+    "apps:user-api",
     ":modules:jpa",
     ":supports:jackson",
     ":supports:logging",
