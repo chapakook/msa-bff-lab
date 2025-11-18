@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS user_db
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_general_ci;
+
+CREATE DATABASE IF NOT EXISTS subscription_db
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_general_ci;
+
+CREATE DATABASE IF NOT EXISTS payment_db
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_general_ci;
+
+CREATE DATABASE IF NOT EXISTS bff_db
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_general_ci;
+
+GRANT ALL PRIVILEGES ON user_db.* TO 'application'@'%';
+GRANT ALL PRIVILEGES ON subscription_db.* TO 'application'@'%';
+GRANT ALL PRIVILEGES ON payment_db.* TO 'application'@'%';
+GRANT ALL PRIVILEGES ON bff_db.* TO 'application'@'%';
+
+FLUSH PRIVILEGES;
