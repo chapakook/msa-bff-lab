@@ -1,8 +1,5 @@
 import org.gradle.api.Project.DEFAULT_VERSION
 import org.springframework.boot.gradle.tasks.bundling.BootJar
-import org.gradle.api.tasks.compile.JavaCompile
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 fun getGitHash(): String {
     return runCatching {
@@ -79,16 +76,6 @@ subprojects {
         testImplementation("org.testcontainers:junit-jupiter")
     }
 
-    tasks.withType<JavaCompile>().configureEach {
-        options.release.set(21)
-    }
-
-    tasks.withType<KotlinCompile>().configureEach {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
-        }
-    }
-
     tasks.withType(Jar::class) { enabled = true }
     tasks.withType(BootJar::class) { enabled = false }
 
@@ -129,6 +116,5 @@ subprojects {
     }
 }
 
-project("apps") { tasks.configureEach { enabled = false } }
 project("modules") { tasks.configureEach { enabled = false } }
 project("supports") { tasks.configureEach { enabled = false } }
